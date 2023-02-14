@@ -1,11 +1,13 @@
 import {createBrowserRouter, createRoutesFromElements, Route} from "react-router-dom"
 import App from "../App"
+import Login from "../pages/login"
+import Signup from "../pages/signup"
 
 const router = createBrowserRouter(createRoutesFromElements(
     <>
     <Route path="/" element={<App/>}>
-        <Route path="/login" element = {<h1>login</h1>}/>
-        <Route path="/signup" element = {<h1>signup</h1>}/>
+        <Route path="/login" element = {Login}/>
+        <Route path="/signup" element = {Signup}/>
         <Route path="/logout" element = {<h1>logout</h1>}/>
         <Route path="/dashboard/" element = {<h1>dashboard</h1>}/>
             <Route path="" element={<h1>Index</h1>}/>
