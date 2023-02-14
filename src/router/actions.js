@@ -18,10 +18,10 @@ export const signupAction = async ({request}) => {
         alert("failed signup")
         return redirect("/signup")
     } 
-redirect("/login")
+    return redirect("/login")
 }
 
- export const loginAction = async ({request}){
+ export const loginAction = async ({request}) => {
     const formData = await request.formData()
     const user = {
         username: formData.get("username"),
@@ -36,14 +36,16 @@ if (response.status === 400){
     alert("failed login")
     return redirect("/dashboard")
 } 
+return redirect("/dashboard")
  }
 
- export const logoutAction = async (){
+ export const logoutAction = async () => {
     const response = await fetch(url + "/auth/logout", {
-        method="post"
+        method: "post"
     })
 if (response.status === 400){
     alert("failed logout")
     return redirect("/dashboard")
 } 
+return redirect("/login")
 }
