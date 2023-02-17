@@ -30,6 +30,7 @@ export const signupAction = async ({request}) => {
     const response = await fetch(url + "/auth/login", {
     method: "post",
     headers,
+    credentials: "include",
     body: JSON.stringify(user)
 })
 if (response.status === 400){

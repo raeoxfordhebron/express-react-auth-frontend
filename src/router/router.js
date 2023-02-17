@@ -5,6 +5,7 @@ import Signup from "../pages/signup"
 import { loginAction, signupAction, logoutAction } from "./actions"
 import Dashboard from "../pages/dashboard"
 import { indexLoader } from "./loaders"
+import Index from "../pages"
 
 const router = createBrowserRouter(createRoutesFromElements(
     <>
@@ -13,7 +14,7 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route path="/signup" element = {<Signup/>} action={signupAction}/>
         <Route path="/logout" action={logoutAction}/>
         <Route path="/dashboard/" element = {<Dashboard/>}/>
-            <Route path="" element={<h1>Index</h1>} loader={indexLoader}/>
+            <Route path="" element={<Index/>} loader={indexLoader}/>
             <Route path=":id/" element={<h1>Show</h1>}/>
                 <Route path="update" element={<h1>Update</h1>}/>
                 <Route path="delete" element={<h1>Delete</h1>}/>
